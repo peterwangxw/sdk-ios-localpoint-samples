@@ -20,7 +20,6 @@
 #import "PubUtils.h"
 
 static NSString *const LocalNotificationCustomString = @"Welcome. ";
-static NSString *const RemindToEnablePushNotificationSettings = @"To make sure you can receive notifications, please enable push notification setting by 'Setting > Notification'";
 
 @interface AppDelegate ()
 
@@ -32,13 +31,6 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // Check push notification settings
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]) {
-        if ([UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone) {
-            [PubUtils displayWarning:RemindToEnablePushNotificationSettings];
-        }
-    }
     
     // Set the new configuration
     [PWLPConfiguration useConfiguration:[PWLPConfiguration defaultConfiguration]];
@@ -67,11 +59,17 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Notify Localpoint the app succeed to register for remote notification
     [PWLocalpoint didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    
+    // Check push notification settings
+    [self checkNotificationSetting];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     // Notify Localpoint the app fail to register for remote notification
     [PWLocalpoint didFailToRegisterForRemoteNotificationsWithError:error];
+    
+    // Check push notification settings
+    [self checkNotificationSetting];
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
@@ -245,6 +243,18 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
                     }
                 });
             }];
+        }
+    }
+}
+
+#pragma mark - Private
+
+- (void)checkNotificationSetting {
+    NSString *enablePushNotificationSettings = @"To make sure you can receive notifications, please enable push notification setting by 'Setting > Notification'";
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]) {
+        if ([UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone) {
+            [PubUtils displayWarning:enablePushNotificationSettings];
         }
     }
 }
