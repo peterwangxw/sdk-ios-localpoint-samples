@@ -1,6 +1,6 @@
 //
 //  AttributeTableViewCell.m
-//  PWLocalpoint
+//  PWLPSample
 //
 //  Created by Xiangwei Wang on 4/8/15.
 //  Copyright (c) 2015 Phunware Inc. All rights reserved.

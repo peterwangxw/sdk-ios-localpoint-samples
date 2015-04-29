@@ -14,24 +14,14 @@
 		9D0A2BA71AE842FD004B7579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0A2BA61AE842FD004B7579 /* Images.xcassets */; };
 		9D0A2BAA1AE842FD004B7579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0A2BA81AE842FD004B7579 /* LaunchScreen.xib */; };
 		9D0A2BB61AE842FD004B7579 /* PWLMSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0A2BB51AE842FD004B7579 /* PWLMSampleTests.m */; };
-		9D16A7E71AE8486F00CADC97 /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7E21AE8486F00CADC97 /* MessageDetailViewController.m */; };
-		9D16A7E81AE8486F00CADC97 /* MessagesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7E41AE8486F00CADC97 /* MessagesManager.m */; };
-		9D16A7E91AE8486F00CADC97 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7E61AE8486F00CADC97 /* MessagesTableViewController.m */; };
 		9D16A7F21AE8487A00CADC97 /* AttributeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7EB1AE8487A00CADC97 /* AttributeTableViewCell.m */; };
 		9D16A7F31AE8487A00CADC97 /* AttributeTableViewSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D16A7EC1AE8487A00CADC97 /* AttributeTableViewSegmentCell.xib */; };
 		9D16A7F41AE8487A00CADC97 /* AttributeTableViewTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D16A7ED1AE8487A00CADC97 /* AttributeTableViewTextFieldCell.xib */; };
 		9D16A7F51AE8487A00CADC97 /* ProfileAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7EF1AE8487A00CADC97 /* ProfileAttributeViewController.m */; };
 		9D16A7F61AE8487A00CADC97 /* UserAttributeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7F11AE8487A00CADC97 /* UserAttributeViewController.m */; };
 		9D16A7FB1AE848D000CADC97 /* SampleDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7FA1AE848D000CADC97 /* SampleDefines.m */; };
-		9D16A8001AE848DC00CADC97 /* LPUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7FD1AE848DC00CADC97 /* LPUIAlertView.m */; };
 		9D16A8011AE848DC00CADC97 /* PubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7FF1AE848DC00CADC97 /* PubUtils.m */; };
-		9D1B2F261AF14633001EA843 /* LPMessageListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F231AF14633001EA843 /* LPMessageListener.m */; };
-		9D1B2F271AF14633001EA843 /* LPZoneEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F251AF14633001EA843 /* LPZoneEventListener.m */; };
 		9D1B2F361AF154EC001EA843 /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F341AF154EC001EA843 /* AppInfoViewController.m */; };
-		9D1B2F401AF15502001EA843 /* GeozoneManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F381AF15502001EA843 /* GeozoneManagerDelegate.m */; };
-		9D1B2F411AF15502001EA843 /* ZoneManagerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F391AF15502001EA843 /* ZoneManagerDataSource.m */; };
-		9D1B2F421AF15502001EA843 /* ZoneManagerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F3C1AF15502001EA843 /* ZoneManagerCoordinator.m */; };
-		9D1B2F431AF15502001EA843 /* ZoneManagerInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F3F1AF15502001EA843 /* ZoneManagerInformation.m */; };
 		9D1B2F481AF15624001EA843 /* ProfileAttributeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F451AF15624001EA843 /* ProfileAttributeTableViewController.m */; };
 		9D1B2F491AF15624001EA843 /* ProfileAttributeValuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1B2F471AF15624001EA843 /* ProfileAttributeValuesTableViewController.m */; };
 		9DB02E4C1AEAB51900E8C894 /* PWLocalpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB02E4B1AEAB51900E8C894 /* PWLocalpoint.framework */; };
@@ -63,12 +53,6 @@
 		9D0A2BAF1AE842FD004B7579 /* PWLMSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWLMSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0A2BB41AE842FD004B7579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D0A2BB51AE842FD004B7579 /* PWLMSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PWLMSampleTests.m; sourceTree = "<group>"; };
-		9D16A7E11AE8486F00CADC97 /* MessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageDetailViewController.h; path = Messages/MessageDetailViewController.h; sourceTree = "<group>"; };
-		9D16A7E21AE8486F00CADC97 /* MessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageDetailViewController.m; path = Messages/MessageDetailViewController.m; sourceTree = "<group>"; };
-		9D16A7E31AE8486F00CADC97 /* MessagesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesManager.h; path = Messages/MessagesManager.h; sourceTree = "<group>"; };
-		9D16A7E41AE8486F00CADC97 /* MessagesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesManager.m; path = Messages/MessagesManager.m; sourceTree = "<group>"; };
-		9D16A7E51AE8486F00CADC97 /* MessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesTableViewController.h; path = Messages/MessagesTableViewController.h; sourceTree = "<group>"; };
-		9D16A7E61AE8486F00CADC97 /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesTableViewController.m; path = Messages/MessagesTableViewController.m; sourceTree = "<group>"; };
 		9D16A7EA1AE8487A00CADC97 /* AttributeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttributeTableViewCell.h; path = Attributes/AttributeTableViewCell.h; sourceTree = "<group>"; };
 		9D16A7EB1AE8487A00CADC97 /* AttributeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AttributeTableViewCell.m; path = Attributes/AttributeTableViewCell.m; sourceTree = "<group>"; };
 		9D16A7EC1AE8487A00CADC97 /* AttributeTableViewSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AttributeTableViewSegmentCell.xib; path = Attributes/AttributeTableViewSegmentCell.xib; sourceTree = "<group>"; };
@@ -79,8 +63,6 @@
 		9D16A7F11AE8487A00CADC97 /* UserAttributeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAttributeViewController.m; path = Attributes/UserAttributeViewController.m; sourceTree = "<group>"; };
 		9D16A7F91AE848D000CADC97 /* SampleDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleDefines.h; path = Misc/SampleDefines.h; sourceTree = "<group>"; };
 		9D16A7FA1AE848D000CADC97 /* SampleDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleDefines.m; path = Misc/SampleDefines.m; sourceTree = "<group>"; };
-		9D16A7FC1AE848DC00CADC97 /* LPUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPUIAlertView.h; path = Utils/LPUIAlertView.h; sourceTree = "<group>"; };
-		9D16A7FD1AE848DC00CADC97 /* LPUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPUIAlertView.m; path = Utils/LPUIAlertView.m; sourceTree = "<group>"; };
 		9D16A7FE1AE848DC00CADC97 /* PubUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PubUtils.h; path = Utils/PubUtils.h; sourceTree = "<group>"; };
 		9D16A7FF1AE848DC00CADC97 /* PubUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PubUtils.m; path = Utils/PubUtils.m; sourceTree = "<group>"; };
 		9D16A83A1AE85AC400CADC97 /* libPods-PWLMSample-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PWLMSample-AFNetworking.a"; path = "Pods/build/Debug-iphoneos/libPods-PWLMSample-AFNetworking.a"; sourceTree = "<group>"; };
@@ -90,20 +72,8 @@
 		9D16A83E1AE85AC400CADC97 /* libPods-PWLMSample-PWCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PWLMSample-PWCore.a"; path = "Pods/build/Debug-iphoneos/libPods-PWLMSample-PWCore.a"; sourceTree = "<group>"; };
 		9D16A83F1AE85AC400CADC97 /* libPods-PWLMSample-PWLogger.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PWLMSample-PWLogger.a"; path = "Pods/build/Debug-iphoneos/libPods-PWLMSample-PWLogger.a"; sourceTree = "<group>"; };
 		9D16A8401AE85AC400CADC97 /* libPods-PWLMSample-SQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-PWLMSample-SQLCipher.a"; path = "Pods/build/Debug-iphoneos/libPods-PWLMSample-SQLCipher.a"; sourceTree = "<group>"; };
-		9D1B2F221AF14633001EA843 /* LPMessageListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPMessageListener.h; path = Listeners/LPMessageListener.h; sourceTree = "<group>"; };
-		9D1B2F231AF14633001EA843 /* LPMessageListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPMessageListener.m; path = Listeners/LPMessageListener.m; sourceTree = "<group>"; };
-		9D1B2F241AF14633001EA843 /* LPZoneEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPZoneEventListener.h; path = Listeners/LPZoneEventListener.h; sourceTree = "<group>"; };
-		9D1B2F251AF14633001EA843 /* LPZoneEventListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPZoneEventListener.m; path = Listeners/LPZoneEventListener.m; sourceTree = "<group>"; };
 		9D1B2F341AF154EC001EA843 /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewController.m; sourceTree = "<group>"; };
 		9D1B2F351AF154EC001EA843 /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoViewController.h; sourceTree = "<group>"; };
-		9D1B2F381AF15502001EA843 /* GeozoneManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeozoneManagerDelegate.m; path = Zones/GeozoneManagerDelegate.m; sourceTree = "<group>"; };
-		9D1B2F391AF15502001EA843 /* ZoneManagerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoneManagerDataSource.m; path = Zones/ZoneManagerDataSource.m; sourceTree = "<group>"; };
-		9D1B2F3A1AF15502001EA843 /* GeozoneManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeozoneManagerDelegate.h; path = Zones/GeozoneManagerDelegate.h; sourceTree = "<group>"; };
-		9D1B2F3B1AF15502001EA843 /* ZoneManagerCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoneManagerCoordinator.h; path = Zones/ZoneManagerCoordinator.h; sourceTree = "<group>"; };
-		9D1B2F3C1AF15502001EA843 /* ZoneManagerCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoneManagerCoordinator.m; path = Zones/ZoneManagerCoordinator.m; sourceTree = "<group>"; };
-		9D1B2F3D1AF15502001EA843 /* ZoneManagerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoneManagerDataSource.h; path = Zones/ZoneManagerDataSource.h; sourceTree = "<group>"; };
-		9D1B2F3E1AF15502001EA843 /* ZoneManagerInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZoneManagerInformation.h; path = Zones/ZoneManagerInformation.h; sourceTree = "<group>"; };
-		9D1B2F3F1AF15502001EA843 /* ZoneManagerInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZoneManagerInformation.m; path = Zones/ZoneManagerInformation.m; sourceTree = "<group>"; };
 		9D1B2F441AF15624001EA843 /* ProfileAttributeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileAttributeTableViewController.h; path = Attributes/ProfileAttributeTableViewController.h; sourceTree = "<group>"; };
 		9D1B2F451AF15624001EA843 /* ProfileAttributeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileAttributeTableViewController.m; path = Attributes/ProfileAttributeTableViewController.m; sourceTree = "<group>"; };
 		9D1B2F461AF15624001EA843 /* ProfileAttributeValuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileAttributeValuesTableViewController.h; path = Attributes/ProfileAttributeValuesTableViewController.h; sourceTree = "<group>"; };
@@ -186,11 +156,8 @@
 		9D0A2B951AE842FD004B7579 /* PWLMSample */ = {
 			isa = PBXGroup;
 			children = (
-				9D1B2F371AF154F0001EA843 /* Zones */,
-				9D1B2F211AF1461E001EA843 /* Listeners */,
 				9D16A7F81AE848C000CADC97 /* Misc */,
 				9D16A7F71AE848B600CADC97 /* Utils */,
-				9D16A7E01AE8485D00CADC97 /* Messages */,
 				9D16A7DF1AE8485400CADC97 /* Attributes */,
 				9D0A2B9A1AE842FD004B7579 /* AppDelegate.h */,
 				9D0A2B9B1AE842FD004B7579 /* AppDelegate.m */,
@@ -249,24 +216,9 @@
 			name = Attributes;
 			sourceTree = "<group>";
 		};
-		9D16A7E01AE8485D00CADC97 /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				9D16A7E11AE8486F00CADC97 /* MessageDetailViewController.h */,
-				9D16A7E21AE8486F00CADC97 /* MessageDetailViewController.m */,
-				9D16A7E31AE8486F00CADC97 /* MessagesManager.h */,
-				9D16A7E41AE8486F00CADC97 /* MessagesManager.m */,
-				9D16A7E51AE8486F00CADC97 /* MessagesTableViewController.h */,
-				9D16A7E61AE8486F00CADC97 /* MessagesTableViewController.m */,
-			);
-			name = Messages;
-			sourceTree = "<group>";
-		};
 		9D16A7F71AE848B600CADC97 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9D16A7FC1AE848DC00CADC97 /* LPUIAlertView.h */,
-				9D16A7FD1AE848DC00CADC97 /* LPUIAlertView.m */,
 				9D16A7FE1AE848DC00CADC97 /* PubUtils.h */,
 				9D16A7FF1AE848DC00CADC97 /* PubUtils.m */,
 			);
@@ -280,32 +232,6 @@
 				9D16A7FA1AE848D000CADC97 /* SampleDefines.m */,
 			);
 			name = Misc;
-			sourceTree = "<group>";
-		};
-		9D1B2F211AF1461E001EA843 /* Listeners */ = {
-			isa = PBXGroup;
-			children = (
-				9D1B2F221AF14633001EA843 /* LPMessageListener.h */,
-				9D1B2F231AF14633001EA843 /* LPMessageListener.m */,
-				9D1B2F241AF14633001EA843 /* LPZoneEventListener.h */,
-				9D1B2F251AF14633001EA843 /* LPZoneEventListener.m */,
-			);
-			name = Listeners;
-			sourceTree = "<group>";
-		};
-		9D1B2F371AF154F0001EA843 /* Zones */ = {
-			isa = PBXGroup;
-			children = (
-				9D1B2F381AF15502001EA843 /* GeozoneManagerDelegate.m */,
-				9D1B2F391AF15502001EA843 /* ZoneManagerDataSource.m */,
-				9D1B2F3A1AF15502001EA843 /* GeozoneManagerDelegate.h */,
-				9D1B2F3B1AF15502001EA843 /* ZoneManagerCoordinator.h */,
-				9D1B2F3C1AF15502001EA843 /* ZoneManagerCoordinator.m */,
-				9D1B2F3D1AF15502001EA843 /* ZoneManagerDataSource.h */,
-				9D1B2F3E1AF15502001EA843 /* ZoneManagerInformation.h */,
-				9D1B2F3F1AF15502001EA843 /* ZoneManagerInformation.m */,
-			);
-			name = Zones;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,26 +403,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1B2F431AF15502001EA843 /* ZoneManagerInformation.m in Sources */,
 				9D16A7F61AE8487A00CADC97 /* UserAttributeViewController.m in Sources */,
 				9D16A7F51AE8487A00CADC97 /* ProfileAttributeViewController.m in Sources */,
 				9D1B2F481AF15624001EA843 /* ProfileAttributeTableViewController.m in Sources */,
 				9D16A7F21AE8487A00CADC97 /* AttributeTableViewCell.m in Sources */,
-				9D1B2F261AF14633001EA843 /* LPMessageListener.m in Sources */,
 				9D1B2F491AF15624001EA843 /* ProfileAttributeValuesTableViewController.m in Sources */,
-				9D1B2F411AF15502001EA843 /* ZoneManagerDataSource.m in Sources */,
 				9D16A8011AE848DC00CADC97 /* PubUtils.m in Sources */,
 				9D0A2B9C1AE842FD004B7579 /* AppDelegate.m in Sources */,
 				9D16A7FB1AE848D000CADC97 /* SampleDefines.m in Sources */,
-				9D1B2F271AF14633001EA843 /* LPZoneEventListener.m in Sources */,
-				9D1B2F401AF15502001EA843 /* GeozoneManagerDelegate.m in Sources */,
 				9D1B2F361AF154EC001EA843 /* AppInfoViewController.m in Sources */,
-				9D16A7E71AE8486F00CADC97 /* MessageDetailViewController.m in Sources */,
-				9D16A8001AE848DC00CADC97 /* LPUIAlertView.m in Sources */,
-				9D16A7E81AE8486F00CADC97 /* MessagesManager.m in Sources */,
-				9D1B2F421AF15502001EA843 /* ZoneManagerCoordinator.m in Sources */,
 				9D0A2B991AE842FD004B7579 /* main.m in Sources */,
-				9D16A7E91AE8486F00CADC97 /* MessagesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
