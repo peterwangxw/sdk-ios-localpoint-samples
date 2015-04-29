@@ -1,8 +1,8 @@
 //
-//  DetailsViewController.h
-//  LocalpointTester_iOS
+//  AppInfoViewController.h
+//  PWLPSample
 //
-//  Created by Jason Schmitt on 2/21/13.
+//  Created by Xiangwei Wang 1/26/15.
 //  Copyright (c) 2015 Phunware, Inc. All rights reserved.
 //
 
@@ -24,5 +24,7 @@
 @property(nonatomic, weak) IBOutlet UILabel *numberOfInsideZones;
 @property(nonatomic, weak) IBOutlet UILabel *numberOfcheckInZones;
 @property(nonatomic, weak) IBOutlet UILabel *numberOfMessages;
+
+- (void)updateUI;
 
 @end

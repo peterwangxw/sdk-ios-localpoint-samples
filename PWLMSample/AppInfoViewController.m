@@ -1,9 +1,9 @@
 //
-//  DetailsViewController.m
-//  LocalpointTester_iOS
+//  AppInfoViewController.m
+//  PWLPSample
 //
-//  Created by Jason Schmitt on 2/21/13.
-//  Copyright (c) 2013 Jason Schmitt. All rights reserved.
+//  Created by Xiangwei Wang 1/26/15.
+//  Copyright (c) 2015 Phunware, Inc. All rights reserved.
 //
 
 #import <PWLocalpoint/PWLocalpoint.h>
@@ -26,7 +26,7 @@ static NSString *const MaxMonitorRegionRadius = @"50,000";
     PWLPZoneMessageManager *messageManager = [PWLPZoneMessageManager sharedManager];
     [messageManager addObserver:self forKeyPath:@"messages" options:0 context:nil];
     
-    [self updateUI:nil];
+    [self updateUI];
 }
 
 #pragma mark - Internal
@@ -34,12 +34,12 @@ static NSString *const MaxMonitorRegionRadius = @"50,000";
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([object conformsToProtocol:@protocol(PWLPZoneManager)]) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateUI:nil];
+            [self updateUI];
         });
     }
 }
 
-- (void)updateUI:(NSNotification*)notification{
+- (void)updateUI{
     
     PWLPConfiguration *cfg = [PWLPConfiguration defaultConfiguration];
     self.brand.text = cfg.brand;
