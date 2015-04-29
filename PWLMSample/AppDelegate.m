@@ -8,16 +8,13 @@
 
 #import <PWLocalpoint/PWLPConfiguration.h>
 #import "AppDelegate.h"
-#import "ZoneManagerCoordinator.h"
-#import "GeozoneManagerDelegate.h"
+#import "MessagesManager.h"
+#import "SampleDefines.h"
+#import "PubUtils.h"
+
 #import "MessagesTableViewController.h"
 #import "MessageDetailViewController.h"
-#import "MessagesManager.h"
-#import "LPMessageListener.h"
-#import "LPZoneEventListener.h"
-#import "SampleDefines.h"
 #import "LPUIAlertView.h"
-#import "PubUtils.h"
 
 static NSString *const LocalNotificationCustomString = @"Welcome. ";
 static NSString *const RemindToEnablePushNotificationSettings = @"To make sure you can receive notifications, please enable push notification setting by 'Setting > Notification'";
@@ -26,24 +23,13 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
 
 @end
 
-@implementation AppDelegate {
-    __strong LPMessageListener *messageListener;
-    __strong LPZoneEventListener *zoneEventListener;
-}
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Check push notification settings
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]) {
-        if ([UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone) {
-            [PubUtils displayWarning:RemindToEnablePushNotificationSettings];
-        }
-    }
-    
-    // Set the new configuration
+    // Start Localpoint service
     [PWLPConfiguration useConfiguration:[PWLPConfiguration defaultConfiguration]];
-    
-    [[ZoneManagerCoordinator sharedCoordinator] startLocalpointWithEnabledZoneManagers];
+    [PWLocalpoint start];
     
     // Notify Localpoint the app finishes launching
     [PWLocalpoint didFinishLaunchingWithOptions:launchOptions];
@@ -51,15 +37,15 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
     // Handle message deep link
     [self handleMessageDeepLink:launchOptions];
     
-    // Start listen message events
-    messageListener = [LPMessageListener new];
-    [messageListener startListening];
-    // Start listen zone events
-    zoneEventListener = [LPZoneEventListener new];
-    [zoneEventListener startListening];
-    
     // Refresh badge on app icon and tabbar
     [[MessagesManager sharedManager] refreshBadgeCounter];
+    
+    // Check push notification settings
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]) {
+        if ([UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone) {
+            [PubUtils displayWarning:RemindToEnablePushNotificationSettings];
+        }
+    }
     
     return YES;
 }

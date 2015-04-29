@@ -19,10 +19,4 @@
 @property(nonatomic, weak) IBOutlet UILabel *server;
 @property(nonatomic, weak) IBOutlet UILabel *searchRadius;
 
-@property(nonatomic, weak) IBOutlet UILabel *numberOfMonitoredZones;
-@property(nonatomic, weak) IBOutlet UILabel *numberOfZones;
-@property(nonatomic, weak) IBOutlet UILabel *numberOfInsideZones;
-@property(nonatomic, weak) IBOutlet UILabel *numberOfcheckInZones;
-@property(nonatomic, weak) IBOutlet UILabel *numberOfMessages;
-
 @end

@@ -49,8 +49,6 @@ static NSString *const MaxMonitorRegionRadius = @"50,000";
     self.deviceID.text = [PWLPDevice sharedInstance].identifier;
     self.deviceOS.text = [[UIDevice currentDevice] systemVersion];
     self.searchRadius.text = MaxMonitorRegionRadius;
-    self.numberOfMessages.text = [NSString stringWithFormat:@"%lu", (long)[[PWLPZoneMessageManager sharedManager].messages count]];
-    
 }
 
 @end
