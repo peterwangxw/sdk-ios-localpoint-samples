@@ -1,9 +1,9 @@
 //
 //  DetailsViewController.m
-//  LocalpointTester_iOS
+//  PWLPSample
 //
-//  Created by Jason Schmitt on 2/21/13.
-//  Copyright (c) 2013 Jason Schmitt. All rights reserved.
+//  Created by Xiangwei Wang on 1/26/15.
+//  Copyright (c) 2013 Xiangwei Wang. All rights reserved.
 //
 
 #import <PWLocalpoint/PWLocalpoint.h>

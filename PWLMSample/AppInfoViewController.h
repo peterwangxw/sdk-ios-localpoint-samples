@@ -1,8 +1,8 @@
 //
 //  DetailsViewController.h
-//  LocalpointTester_iOS
+//  PWLPSample
 //
-//  Created by Jason Schmitt on 2/21/13.
+//  Created by Xiangwei Wang on 1/26/15.
 //  Copyright (c) 2015 Phunware, Inc. All rights reserved.
 //
 

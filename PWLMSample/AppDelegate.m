@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  Sample
+//  PWLPSample
 //
-//  Created by Illya Busigin on 1/26/15.
+//  Created by Xiangwei Wang on 1/26/15.
 //  Copyright (c) 2015 Phunware Inc. All rights reserved.
 //
 
@@ -48,6 +48,11 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
     }
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Notify Localpoint the app succed to register for remote notification
+    [PWLocalpoint didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
