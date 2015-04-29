@@ -1,0 +1,82 @@
+PODS:
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - FMDB/common (2.5)
+  - FMDB/SQLCipher (2.5):
+    - FMDB/common
+    - SQLCipher
+  - Kiwi (2.3.1)
+  - Leech (1.0.2)
+  - MBProgressHUD (0.9.1)
+  - OHHTTPStubs (4.0.0)
+  - PW_Shared (1.0.3)
+  - PWCore (1.3.2)
+  - PWLogger (1.0.0)
+  - RPJSONValidator (0.2.0)
+  - SQLCipher (3.1.0):
+    - SQLCipher/standard (= 3.1.0)
+  - SQLCipher/common (3.1.0)
+  - SQLCipher/standard (3.1.0):
+    - SQLCipher/common
+
+DEPENDENCIES:
+  - AFNetworking
+  - FMDB/SQLCipher
+  - Kiwi
+  - Leech (from `https://github.com/samodom/Leech`, branch `sam`)
+  - MBProgressHUD
+  - OHHTTPStubs
+  - PW_Shared
+  - PWCore
+  - PWLogger (from `https://github.com/phunware/sdk-ios-logger.git`, branch `master`)
+  - RPJSONValidator
+
+EXTERNAL SOURCES:
+  Leech:
+    :branch: sam
+    :git: https://github.com/samodom/Leech
+  PWLogger:
+    :branch: master
+    :git: https://github.com/phunware/sdk-ios-logger.git
+
+CHECKOUT OPTIONS:
+  Leech:
+    :commit: ddff02c562685254b6f069042280afd5e9933d53
+    :git: https://github.com/samodom/Leech
+  PWLogger:
+    :commit: 5b88d6b8fa2b61205949651d1fa92ed17f472b48
+    :git: https://github.com/phunware/sdk-ios-logger.git
+
+SPEC CHECKSUMS:
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  Leech: cfcd54a98fe841597c053625b2252a9305c1cb8b
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  OHHTTPStubs: 3d65d31dd8389a8adabcc086ff2cc99c02e49bcc
+  PW_Shared: 7558b1a276515d034a23c4d41a114cedc2ada1fb
+  PWCore: d9d4bb18ddeba4f6bc00c0936a262cb8fde7b111
+  PWLogger: 86b8ddb55a5fda1542a06b6f3fbf4a27f45120ce
+  RPJSONValidator: a079b234c0f87833b657708adb80531dc45dbe83
+  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
+
+COCOAPODS: 0.35.0
