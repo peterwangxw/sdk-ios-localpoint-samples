@@ -14,9 +14,6 @@
 		9D0A2BA71AE842FD004B7579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0A2BA61AE842FD004B7579 /* Images.xcassets */; };
 		9D0A2BAA1AE842FD004B7579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0A2BA81AE842FD004B7579 /* LaunchScreen.xib */; };
 		9D0A2BB61AE842FD004B7579 /* PWLMSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0A2BB51AE842FD004B7579 /* PWLMSampleTests.m */; };
-		9D16A7E71AE8486F00CADC97 /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7E21AE8486F00CADC97 /* MessageDetailViewController.m */; };
-		9D16A7E81AE8486F00CADC97 /* MessagesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7E41AE8486F00CADC97 /* MessagesManager.m */; };
-		9D16A7E91AE8486F00CADC97 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7E61AE8486F00CADC97 /* MessagesTableViewController.m */; };
 		9D16A7FB1AE848D000CADC97 /* SampleDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7FA1AE848D000CADC97 /* SampleDefines.m */; };
 		9D16A8001AE848DC00CADC97 /* LPUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7FD1AE848DC00CADC97 /* LPUIAlertView.m */; };
 		9D16A8011AE848DC00CADC97 /* PubUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D16A7FF1AE848DC00CADC97 /* PubUtils.m */; };
@@ -50,12 +47,6 @@
 		9D0A2BAF1AE842FD004B7579 /* PWLMSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWLMSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0A2BB41AE842FD004B7579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D0A2BB51AE842FD004B7579 /* PWLMSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PWLMSampleTests.m; sourceTree = "<group>"; };
-		9D16A7E11AE8486F00CADC97 /* MessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageDetailViewController.h; path = Messages/MessageDetailViewController.h; sourceTree = "<group>"; };
-		9D16A7E21AE8486F00CADC97 /* MessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageDetailViewController.m; path = Messages/MessageDetailViewController.m; sourceTree = "<group>"; };
-		9D16A7E31AE8486F00CADC97 /* MessagesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesManager.h; path = Messages/MessagesManager.h; sourceTree = "<group>"; };
-		9D16A7E41AE8486F00CADC97 /* MessagesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesManager.m; path = Messages/MessagesManager.m; sourceTree = "<group>"; };
-		9D16A7E51AE8486F00CADC97 /* MessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesTableViewController.h; path = Messages/MessagesTableViewController.h; sourceTree = "<group>"; };
-		9D16A7E61AE8486F00CADC97 /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesTableViewController.m; path = Messages/MessagesTableViewController.m; sourceTree = "<group>"; };
 		9D16A7F91AE848D000CADC97 /* SampleDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleDefines.h; path = Misc/SampleDefines.h; sourceTree = "<group>"; };
 		9D16A7FA1AE848D000CADC97 /* SampleDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleDefines.m; path = Misc/SampleDefines.m; sourceTree = "<group>"; };
 		9D16A7FC1AE848DC00CADC97 /* LPUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPUIAlertView.h; path = Utils/LPUIAlertView.h; sourceTree = "<group>"; };
@@ -151,7 +142,6 @@
 			children = (
 				9D16A7F81AE848C000CADC97 /* Misc */,
 				9D16A7F71AE848B600CADC97 /* Utils */,
-				9D16A7E01AE8485D00CADC97 /* Messages */,
 				9D0A2B9A1AE842FD004B7579 /* AppDelegate.h */,
 				9D0A2B9B1AE842FD004B7579 /* AppDelegate.m */,
 				9D1B2F341AF154EC001EA843 /* AppInfoViewController.m */,
@@ -188,19 +178,6 @@
 				9D0A2BB41AE842FD004B7579 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9D16A7E01AE8485D00CADC97 /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				9D16A7E11AE8486F00CADC97 /* MessageDetailViewController.h */,
-				9D16A7E21AE8486F00CADC97 /* MessageDetailViewController.m */,
-				9D16A7E31AE8486F00CADC97 /* MessagesManager.h */,
-				9D16A7E41AE8486F00CADC97 /* MessagesManager.m */,
-				9D16A7E51AE8486F00CADC97 /* MessagesTableViewController.h */,
-				9D16A7E61AE8486F00CADC97 /* MessagesTableViewController.m */,
-			);
-			name = Messages;
 			sourceTree = "<group>";
 		};
 		9D16A7F71AE848B600CADC97 /* Utils */ = {
@@ -394,11 +371,8 @@
 				9D0A2B9C1AE842FD004B7579 /* AppDelegate.m in Sources */,
 				9D16A7FB1AE848D000CADC97 /* SampleDefines.m in Sources */,
 				9D1B2F361AF154EC001EA843 /* AppInfoViewController.m in Sources */,
-				9D16A7E71AE8486F00CADC97 /* MessageDetailViewController.m in Sources */,
 				9D16A8001AE848DC00CADC97 /* LPUIAlertView.m in Sources */,
-				9D16A7E81AE8486F00CADC97 /* MessagesManager.m in Sources */,
 				9D0A2B991AE842FD004B7579 /* main.m in Sources */,
-				9D16A7E91AE8486F00CADC97 /* MessagesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

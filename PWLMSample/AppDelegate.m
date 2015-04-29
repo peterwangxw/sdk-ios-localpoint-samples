@@ -8,12 +8,8 @@
 
 #import <PWLocalpoint/PWLPConfiguration.h>
 #import "AppDelegate.h"
-#import "MessagesManager.h"
 #import "SampleDefines.h"
 #import "PubUtils.h"
-
-#import "MessagesTableViewController.h"
-#import "MessageDetailViewController.h"
 #import "LPUIAlertView.h"
 
 static NSString *const LocalNotificationCustomString = @"Welcome. ";
@@ -32,12 +28,6 @@ static NSString *const LocalNotificationCustomString = @"Welcome. ";
     
     // Notify Localpoint the app finishes launching
     [PWLocalpoint didFinishLaunchingWithOptions:launchOptions];
-    
-    // Handle message deep link
-    [self handleMessageDeepLink:launchOptions];
-    
-    // Refresh badge on app icon and tabbar
-    [[MessagesManager sharedManager] refreshBadgeCounter];
     
     return YES;
 }
@@ -103,75 +93,6 @@ static NSString *const LocalNotificationCustomString = @"Welcome. ";
     return YES;
 }
 
-#pragma mark - Message Deep Link
-
-- (void)handleMessageDeepLink:(NSDictionary*)userInfo {
-    // Get message identifier from the userInfo dictionary
-    NSString *messageId = [[PWLPZoneMessageManager sharedManager] parseMessageIdentifier:userInfo];
-    
-    if (!messageId) {
-        // No message to deep link
-        return;
-    }
-    
-    // Start to display loading indicator
-    [PubUtils showLoading];
-    
-    [[PWLPZoneMessageManager sharedManager] fetchMessageWithIdentifier:messageId completion:^(PWLPZoneMessage *message, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // Stop displaying loading indicator
-            [PubUtils dismissLoading];
-            
-            if (message) {
-                // Go to display the specific message in message detail view controller
-                [self pushMessageDetailViewControllerWithMessage:message];
-            } else if (error) {
-                // To do something to handle the error.
-                [PubUtils displayError:error];
-            }
-        });
-    }];
-}
-
-- (void)pushMessageDetailViewControllerWithMessage:(PWLPZoneMessage*)message {
-    // Try to get message detail view controller from story board
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:PWMainStoryBoardName bundle:nil];
-    MessageDetailViewController *messageDetailController = [storyboard instantiateViewControllerWithIdentifier:MessageDetailViewControllerIdentifier];
-    // Set the message to display in the message detail view controller
-    messageDetailController.message = message;
-    
-    // Find the message list view controller in the tabbar
-    UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
-    NSInteger indexOfController = 0;
-    for (UIViewController *controller in tabBar.viewControllers) {
-        UIViewController *tabRootController = nil;
-        UIViewController *tabVisibleController = nil;
-        if ([controller isKindOfClass:[UINavigationController class]]) {
-            tabRootController = [(UINavigationController*)controller viewControllers].firstObject;
-            tabVisibleController = [(UINavigationController*)controller visibleViewController];
-        } else {
-            tabRootController = controller;
-            tabVisibleController = controller;
-        }
-        
-        // Check every visible view controller to find message list/detail view controller
-        if ([tabRootController isKindOfClass:[MessagesTableViewController class]]) {
-            if ([tabVisibleController isKindOfClass:[MessageDetailViewController class]]) {
-                // It's message detail view controller, it's to reload it with the current message
-                tabBar.selectedIndex = indexOfController;
-                ((MessageDetailViewController*)tabVisibleController).message = message;
-                [tabVisibleController viewDidLoad];
-            } else {
-                // It's message list view controller, it's to `push` a message detail view controller
-                tabBar.selectedIndex = indexOfController;
-                [(UINavigationController *)tabBar.selectedViewController pushViewController:messageDetailController animated:YES];
-            }
-        }
-        
-        indexOfController ++;
-    }
-}
-
 #pragma mark - Handle & Display notification
 
 - (void)promptLocalNotification:(UILocalNotification *)notification {
@@ -209,27 +130,6 @@ static NSString *const LocalNotificationCustomString = @"Welcome. ";
         alert.messageId = messageId;
         
         [alert show];
-    }
-}
-
-#pragma mark - Handle & Display notification(UIAlertViewDelegate)
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if ([alertView isKindOfClass:[LPUIAlertView class]]) {
-        // It's only handle the customized 'LPUIAlertView'
-        if (buttonIndex == 1) {
-            [[PWLPZoneMessageManager sharedManager] fetchMessageWithIdentifier:((LPUIAlertView*)alertView).messageId completion:^(PWLPZoneMessage *message, NSError *error) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (message) {
-                        // Show message detail in message detail view controller
-                        [self pushMessageDetailViewControllerWithMessage:message];
-                    } else if (error) {
-                        // Hand the error by youself
-                        [PubUtils displayError:error];
-                    }
-                });
-            }];
-        }
     }
 }
 
