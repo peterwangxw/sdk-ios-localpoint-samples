@@ -1,6 +1,6 @@
 //
 //  PubUtils.m
-//  PWLocalpoint
+//  PWLPSample
 //
 //  Created by Xiangwei Wang on 3/31/15.
 //  Copyright (c) 2015 Phunware Inc. All rights reserved.

@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  PWLPSample
 //
-//  Created by Xiangwei Wang 1/26/15.
+//  Created by Xiangwei Wang on 1/26/15.
 //  Copyright (c) 2015 Phunware, Inc. All rights reserved.
 //
 
@@ -10,21 +10,10 @@
 #import "AppDelegate.h"
 #import "ZoneManagerCoordinator.h"
 #import "GeozoneManagerDelegate.h"
-#import "MessagesTableViewController.h"
-#import "MessageDetailViewController.h"
-#import "MessagesManager.h"
 #import "LPMessageListener.h"
 #import "LPZoneEventListener.h"
 #import "SampleDefines.h"
-#import "LPUIAlertView.h"
 #import "PubUtils.h"
-
-static NSString *const LocalNotificationCustomString = @"Welcome. ";
-static NSString *const RemindToEnablePushNotificationSettings = @"To make sure you can receive notifications, please enable push notification setting by 'Setting > Notification'";
-
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate {
     __strong LPMessageListener *messageListener;
@@ -32,13 +21,6 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // Check push notification settings
-    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]) {
-        if ([UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone) {
-            [PubUtils displayWarning:RemindToEnablePushNotificationSettings];
-        }
-    }
     
     // Set the new configuration
     [PWLPConfiguration useConfiguration:[PWLPConfiguration defaultConfiguration]];
@@ -55,20 +37,23 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
     zoneEventListener = [LPZoneEventListener new];
     [zoneEventListener startListening];
     
-    // Refresh badge on app icon and tabbar
-    [[MessagesManager sharedManager] refreshBadgeCounter];
-    
     return YES;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // Notify Localpoint the app succed to register for remote notification
+    // Notify Localpoint the app succeed to register for remote notification
     [PWLocalpoint didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    
+    // Check push notification settings
+    [self checkNotificationSetting];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     // Notify Localpoint the app fail to register for remote notification
     [PWLocalpoint didFailToRegisterForRemoteNotificationsWithError:error];
+    
+    // Check push notification settings
+    [self checkNotificationSetting];
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
@@ -100,6 +85,18 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Private
+
+- (void)checkNotificationSetting {
+    NSString *enablePushNotificationSettings = @"To make sure you can receive notifications, please enable push notification setting by 'Setting > Notification'";
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(currentUserNotificationSettings)]) {
+        if ([UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone) {
+            [PubUtils displayWarning:enablePushNotificationSettings];
+        }
+    }
 }
 
 @end
