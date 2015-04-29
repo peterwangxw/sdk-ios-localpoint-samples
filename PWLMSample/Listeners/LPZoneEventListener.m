@@ -1,6 +1,6 @@
 //
 //  LPZoneEventListener.m
-//  PWLocalpoint
+//  PWLPSample
 //
 //  Created by Xiangwei Wang on 4/20/15.
 //  Copyright (c) 2015 Phunware Inc. All rights reserved.
@@ -11,6 +11,10 @@
 #import "LPZoneEventListener.h"
 #import "ZoneManagerCoordinator.h"
 #import "PubUtils.h"
+
+@interface LPZoneEventListener()
+
+@end
 
 @implementation LPZoneEventListener
 
@@ -37,6 +41,9 @@
     
     // Register for event notification of fail checkin zone
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFailCheckInForZoneNotification:) name:PWLPZoneManagerDidFailCheckInForZoneNotification object:nil];
+    
+    // Register for event notification of monitored zones
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didMonitoredZonesChanged:) name:GeozoneManagerMonitoredZonesChanged object:nil];
 }
 
 - (void)stopListening {
@@ -60,6 +67,9 @@
     
     // Unegister for event notification of fail checkin zone
     [[NSNotificationCenter defaultCenter] removeObserver:self name:PWLPZoneManagerDidFailCheckInForZoneNotification object:nil];
+    
+    // Unegister for event notification of monitered zones
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:GeozoneManagerMonitoredZonesChanged object:nil];
 }
 
 #pragma mark - Private methods
@@ -120,8 +130,8 @@
 - (void)didAddZonesNotification:(NSNotification*)notification {
     NSArray *identifierArray =  notification.userInfo[PWLPZoneManagerNotificationZoneIdentifiersArrayKey];
     if (identifierArray.count > 0) {
-        // You shoud customize the code here to do what you need to do.
-        [PubUtils toast:[NSString stringWithFormat:@"Add zones: %@", [identifierArray description]]];
+        // Update the info view controller
+        [self refreshAppInfo];
     }
 }
 
@@ -132,8 +142,8 @@
 - (void)didDeleteZonesNotification:(NSNotification*)notification {
     NSArray *identifierArray =  notification.userInfo[PWLPZoneManagerNotificationZoneIdentifiersArrayKey];
     if (identifierArray.count > 0) {
-        // You shoud customize the code here to do what you need to do.
-        [PubUtils toast:[NSString stringWithFormat:@"Remove zones: %@", [identifierArray description]]];
+        // Update the info view controller
+        [self refreshAppInfo];
     }
 }
 
@@ -147,6 +157,15 @@
         // You shoud customize the code here to do what you need to do.
         [PubUtils toast:[NSString stringWithFormat:@"Modify zones: %@", [identifierArray description]]];
     }
+}
+
+/**
+ The selector to handle notification when monitored zone changes
+ @param notification A object of `NSNotification`
+ */
+- (void)didMonitoredZonesChanged:(NSNotification*)notification {
+    // Update the info view controller
+    [self refreshAppInfo];
 }
 
 #pragma mark - Helper metheds
@@ -189,6 +208,31 @@
  */
 - (id<PWLPZoneManager>)getPWLPGeoZoneManager {
     return [ZoneManagerCoordinator getManagerWithClass:[PWLPGeoZoneManager class]];
+}
+
+/**
+ Refresh app infor view controller
+ */
+- (void)refreshAppInfo {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Set for tabbar item
+        UIWindow *currentWindow = [[UIApplication sharedApplication].windows firstObject];
+        UITabBarController *tabBarController = (UITabBarController *)currentWindow.rootViewController;
+        [tabBarController.viewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            UIViewController *controller = obj;
+            UIViewController *tabRootController = nil;
+            if ([controller isKindOfClass:[UINavigationController class]]) {
+                tabRootController = [(UINavigationController*)controller viewControllers].firstObject;
+            } else {
+                tabRootController = controller;
+            }
+            
+            // Check every visible view controller to find message list/detail view controller
+            if ([tabRootController isKindOfClass:[AppInfoViewController class]]) {
+                [(AppInfoViewController*)tabRootController updateUI];
+            }
+        }];
+    });
 }
 
 - (void)dealloc {
