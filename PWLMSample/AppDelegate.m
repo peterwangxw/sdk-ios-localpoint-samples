@@ -48,9 +48,6 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
     // Notify Localpoint the app finishes launching
     [PWLocalpoint didFinishLaunchingWithOptions:launchOptions];
     
-    // Handle message deep link
-    [self handleMessageDeepLink:launchOptions];
-    
     // Start listen message events
     messageListener = [LPMessageListener new];
     [messageListener startListening];
@@ -58,10 +55,18 @@ static NSString *const RemindToEnablePushNotificationSettings = @"To make sure y
     zoneEventListener = [LPZoneEventListener new];
     [zoneEventListener startListening];
     
+    // Handle message deep link
+    [self handleMessageDeepLink:launchOptions];
+    
     // Refresh badge on app icon and tabbar
     [[MessagesManager sharedManager] refreshBadgeCounter];
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Notify Localpoint the app succeed to register for remote notification
+    [PWLocalpoint didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
