@@ -1,4 +1,4 @@
-Location Marketing SDK for iOS
+Location Marketing Sample Application for iOS
 ==================
 
 Version 3.0
@@ -25,4 +25,5 @@ pod 'PWLocalpoint', '~>3.0'
 
 Documentation
 ------------
+TODO....
 
